@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Molaei</title>
+</head>
+<body>
+<!--nav bar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./image/Black White Minimalist Typography M Monogram Logo.png" alt="Logo" width="75" height="55" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item" >
+            <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                information
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/hosseinmolaei3">github</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+<!--end nav-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Information for Index</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" dir="rtl">
+          سلام و عرض خسته نباشید <br>
+          این این سند با استفاده از زبان جاوااسکریپت نوسته شده است
+          یک جدول در میانه صفحه وجود دارد که شما میتوانید مقادیر را درآن وارد کنید
+          از u0 وdt وdx وalpha و n که تعداد جملات است  مقادیر را در جدول 
+          پایین تر نشان شما میدهد 
+          <img src="./image/789.png" alt="valueimg" width="750" height="200"><br>
+           در پایین آن نمودارش را رسم میکند امیدوارم
+          رابط کاربری ساده ای طراحی کرده باشم
+          <img src="./image/125.png" alt="valueimg" width="750" height="200"><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">متوجه شدم</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- source-->
+    <table class="table table-bordered">
+        <tr>
+            <td>Variable</td>
+            <td>Explanation</td>
+            <td>Value</td>
+        </tr>
+        <tr>
+            <td>u0</td>
+            <td>Initial temperature distribution</td>
+            <td><input type="text" id="u0"  class="form-control" value="0,0,100,100,0,0"></td>
+        </tr>
+        <tr>
+            <td>alpha</td>
+            <td>Thermal diffusivity of the material</td>
+            <td><input type="text" id="alpha" class="form-control"  value="0.01"></td>
+        </tr>
+        <tr>
+            <td>dt</td>
+            <td>Time step size</td>
+            <td><input type="text" id="dt"  class="form-control" value="0.01"></td>
+        </tr>
+        <tr>
+            <td>dx</td>
+            <td>Spatial step size</td>
+            <td><input type="text" id="dx"  class="form-control" value="1"></td>
+        </tr>
+        <tr>
+            <td>n</td>
+            <td>Number of time steps to simulate</td>
+            <td><input type="text" id="n"  class="form-control" value="10"></td>
+        </tr>
+    </table><br>
+
+    <div class="text-center">
+        <button onclick="updateResult()" class="btn btn-outline-dark">Update</button><br><br>
+    </div>
+
+    <table>
+    
+    </table>
+    <table id="result" class="table table-dark table-hover">
+        <tr>
+            <th>u0</th>
+            <th>alpha</th>
+            <th>dt</th>
+            <th>dx</th>
+            <th>n</th>
+        </tr>
+    </table><br><br>
+<!--canvas chart js-->
+    <canvas id="chart" class="bg-black bg-opacity-25 text-light"></canvas>
+<!--footer-->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© 2023 Hossein Molaei</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <a href="" class="text-dark fs-3 me-3"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/hossein-molaei-87424a232" class="text-dark fs-3 me-3"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/hosseinmolaei3" class="text-dark fs-3 me-3"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="#nav" class="text-dark fs-3 me-3"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </ul>
+      </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

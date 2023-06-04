@@ -1,0 +1,13 @@
+@font-face {
+    font-family: oswald;
+    src: url(./Oswald-VariableFont_wght.ttf);
+}
+body{
+    font-family: oswald;
+}
+td,th{
+    text-align: center;
+}
+input{
+    text-align: center;
+}
